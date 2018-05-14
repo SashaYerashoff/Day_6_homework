@@ -16,11 +16,12 @@ namespace majasdarbs
                 string currentUser = userId;
                 Console.WriteLine("Sessija numurs {0}, Lietotājs: {1}", sessijuSkaititajs, currentUser);
                 Console.WriteLine("---------------------------------------");
-                if (sessijuSkaititajs == 1) { userId = Lietotajs(HelloUser()); };
+                if (sessijuSkaititajs == 1) { userId = Lietotajs(HelloUser()); }
                 sessijuSkaititajs++;
-                //------Viss izpildams kodz zemāk---------
+				//------Viss izpildams kods zemāk---------
 
-                ReizTabula();
+				ZvaigznesArFor();
+				ReizTabula();
                 Console.Write("Lai turpināt, nospied enter: ");
                 Console.ReadLine();
                 Zvaigznes();
@@ -38,6 +39,15 @@ namespace majasdarbs
         }
         //-------Šeit sākas funkcijas---------
 
+		static void ZvaigznesArFor()
+		{
+			string zvaigze = "";
+			for (int i = 1; i <= 3; i++)
+			{
+				zvaigze = zvaigze + "*";
+				Console.WriteLine(zvaigze);
+			}
+		}
         static void SkaitamAtpakal() // 3) Uzdevums, atpakaļskaitīšana
         {
             Console.WriteLine("--------------Uzdevums uz atpakaļskaitīšanu--------------");
@@ -83,7 +93,8 @@ namespace majasdarbs
 			while (number < 1 || number > 10)
 			{
 				Console.Write("Tu izbēlējies vai nu pa daudz, va pa maz. Ievadi skaitli no 1 līdz 10: ");
-				number = Convert.ToInt16(Console.ReadLine());
+				number  = Convert.ToInt16(Console.ReadLine());
+				izvads = number;
 			}
 
 			Console.WriteLine();
