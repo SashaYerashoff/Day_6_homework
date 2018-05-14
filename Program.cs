@@ -69,7 +69,7 @@ namespace majasdarbs
             int izvads = 0;
             string ievads = Console.ReadLine();
             int number;
-
+            
             bool result = Int32.TryParse(ievads, out number); // Šī ir pārbaude vait tiešām numurs
             if (result)
             {
@@ -80,16 +80,22 @@ namespace majasdarbs
             {
                 Console.WriteLine("Man tavs ievads neisskatījies pēc cipara!");
             } //pārbaudes beigas
+			while (number < 1 || number > 10)
+			{
+				Console.Write("Tu izbēlējies vai nu pa daudz, va pa maz. Ievadi skaitli no 1 līdz 10: ");
+				number = Convert.ToInt16(Console.ReadLine());
+			}
 
-            Console.WriteLine();
-            Console.WriteLine("---------------reizrēķina tabula uz {0}----------------", izvads);
-            for (int i = 1; i <= 10; i++)
-            {
-                int a = izvads, b;
-                b = a * i;
-                Console.WriteLine("{0} * {1} = {2}", a, i, b);
-            }
-            Console.WriteLine();
+			Console.WriteLine();
+			Console.WriteLine("---------------reizrēķina tabula uz {0}----------------", izvads);
+			for (int i = 1; i <= 10; i++)
+			{
+				int a = izvads, b;
+				b = a * i;
+				Console.WriteLine("{0} * {1} = {2}", a, i, b);
+			}
+			Console.WriteLine();
+
         }
 
         static string Lietotajs(string lietotajs)
